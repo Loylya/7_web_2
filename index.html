@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aurora Hunter SPB — охота за северным сиянием</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/suncalc/suncalc.min.js"></script>
+</head>
+<body>
+  <header class="header">
+    <h1>🌌 Aurora Hunter SPB</h1>
+    <p class="subtitle">Охота за северным сиянием в Санкт-Петербурге</p>
+    <button id="refreshBtn" class="refresh-btn">🔄 Обновить данные</button>
+    <span id="lastUpdate" class="last-update"></span>
+  </header>
+
+  <main class="grid">
+    <!-- Космическая погода -->
+    <section class="card" id="spaceCard">
+      <h2>🛰️ Космическая погода</h2>
+      <div class="kp-value" id="kpValue">—</div>
+      <div class="kp-label">Kp-индекс</div>
+      <div class="status" id="spaceStatus">Загрузка…</div>
+      <div class="hint" id="spaceHint"></div>
+    </section>
+
+    <!-- Погода в СПб -->
+    <section class="card" id="weatherCard">
+      <h2>🌡️ Погода в СПб</h2>
+      <div class="weather-row">
+        <span class="weather-label">Температура:</span>
+        <span class="weather-value" id="temp">—</span>
+      </div>
+      <div class="weather-row">
+        <span class="weather-label">Ощущается:</span>
+        <span class="weather-value" id="feelsLike">—</span>
+      </div>
+      <div class="weather-row">
+        <span class="weather-label">Облачность:</span>
+        <span class="weather-value" id="clouds">—</span>
+      </div>
+      <div class="hint" id="weatherHint"></div>
+    </section>
+
+    <!-- Луна -->
+    <section class="card" id="moonCard">
+      <h2>🌙 Луна</h2>
+      <div class="moon-row">
+        <span class="weather-label">Фаза:</span>
+        <span class="weather-value" id="moonPhase">—</span>
+      </div>
+      <div class="moon-row">
+        <span class="weather-label">Освещённость:</span>
+        <span class="weather-value" id="moonIllum">—</span>
+      </div>
+      <div class="hint" id="moonHint"></div>
+    </section>
+
+    <!-- Заметки -->
+    <section class="card notes-card" id="notesCard">
+      <h2>📝 Заметки</h2>
+      <div class="notes-input">
+        <textarea id="noteInput" placeholder="Что важного сегодня? (например: выехал за город, небо чистое)"></textarea>
+        <button id="addNoteBtn">Добавить заметку</button>
+      </div>
+      <ul id="notesList" class="notes-list"></ul>
+      <button id="clearNotesBtn" class="clear-btn">Очистить все заметки</button>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Данные: NASA DONKI · OpenWeatherMap · SunCalc</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
